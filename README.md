@@ -6,13 +6,51 @@ First, run the development server:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
+
+# Project Name
+
+Dashboard for managing products.
+
+## Features
+
+- **Fetch Products**: Display products fetched from an API.
+- **Edit Products**: Update product details through a UI form.
+- **Delete Products**: Remove products from the table and backend.
+- **Add New Products**: Add new products to the database.
+
+## Technologies Used
+
+- **NEXT.JS**: For building the user interface.
+- **React Query**: For fetching, caching, and syncing data.
+- **Ant Design**: For UI components.
+- **TypeScript**: For type safety in the code.
+- **Axios** (or Fetch API): For making API requests.
+
+## Installation & Setup
+
+  1. **Clone the Repository**:
+  ```bash
+  git clone https://github.com/yourusername/dashboard-test.git
+  cd dashboard-test
+  ```
+  2. **Install Dependencies**:
+  ```bash
+  npm install --legacy-peer-deps
+  ```
+  3. **Run the Development Server**:
+  ```bash
+  npm run dev
+    ```
+
+### Prerequisites
+
+Before you begin, ensure you have the following software installed on your machine:
+
+- **Node.js** (version 16 or later)
+- **npm** (version 8 or later)
+- **Next.Js** (version 13 or late)
+
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
