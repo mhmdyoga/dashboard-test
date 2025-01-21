@@ -54,6 +54,7 @@ const ProductNew = () => {
     })
 
     const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+      e.preventDefault();
       const productData: Partial<Product> = {
         title: formData.title,
         price: formData.price,
