@@ -3,11 +3,18 @@
 import React, { useState } from 'react';
 import { useQuery } from '@tanstack/react-query';
 import { deleteProduct, getProducts, updateProduct } from '@/libs/hooks/hookProduct';
-import { Table, Spin, Alert, Tooltip, Button, Drawer, Form, Input, Row, Select, Col } from 'antd';
+import { Table, Spin, Alert, Tooltip, Button, Drawer, Form, Input, Row, Col } from 'antd';
 import ProductNew from '../ui/addProductButton';
 import { useForm } from 'antd/es/form/Form';
 
-const { Option } = Select;
+type ProductsType = {
+  id?: string;
+  title: string;
+  price: number;
+  category: string;
+  description: string;
+  image: string;
+}
 
 const Dashboard = () => {
   const { data, isLoading, isError, error } = useQuery({
@@ -26,6 +33,7 @@ const Dashboard = () => {
   const [form] = useForm();
   const [selectedProductId, setSelectedProductId] = useState(null);
 
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const showDrawer = (record: any) => {
     setSelectedProductId(record.id);
     form.setFieldsValue({
@@ -75,7 +83,7 @@ const Dashboard = () => {
     );
   };// error if data is error
 
-  const dataProduct = data.map((item: any) => ({
+  const dataProduct = data.map((item: ProductsType) => ({
     key: item.id,
     id: item.id,
     title: item.title,
@@ -131,6 +139,7 @@ const Dashboard = () => {
     {
       title: 'Action',
       key: 'action',
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
       render: (_: any, record: any) => (
         <div className="flex flex-row gap-2 space-x-2">
           <button onClick={() => showDrawer(record)}>Edit</button>
