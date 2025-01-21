@@ -151,7 +151,7 @@ const Dashboard = () => {
 
   return (
     <div>
-      <div className="p-6 ml-[1450px]">
+      <div className="p-6 ml-[1050px]">
         <ProductNew />
       </div>
       <Table dataSource={dataProduct} columns={columns} />
